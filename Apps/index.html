@@ -28,7 +28,16 @@
   <body>
     <div id="cesiumContainer"></div>
     <script>
-      var viewer = new Cesium.Viewer("cesiumContainer");
+      var viewer = new Cesium.Viewer('cesiumContainer', {
+      baseLayerPicker: true,
+      timeline : false,
+      animation : true,
+      homeButton: false,
+      vrButton: true,
+      geocoder:false,
+      sceneModePicker:false,
+      navigationHelpButton:false
+      });
       viewer.dataSources.add(Cesium.KmlDataSource.load("./data/minamialps_agri.kml"));
     </script>
   </body>
