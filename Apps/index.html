@@ -39,8 +39,22 @@
       navigationHelpButton:false
       });
       viewer.camera.flyTo({
-      destination : Cesium.Cartesian3.fromDegrees(138.469695, 35.632175, 100000.0)});
-      viewer.dataSources.add(Cesium.KmlDataSource.load("./data/minamialps_agri.kml"));
+      destination : Cesium.Cartesian3.fromDegrees(138.469695, 35.632175, 500000.0)});
+      Sandcastle.addToolbarMenu(
+      [
+        {
+          text: "KML - Minami Alps Farmfield",
+          onselect: function () 
+          {
+          viewer.camera.flyTo({
+          destination : Cesium.Cartesian3.fromDegrees(138.469695, 35.632175, 80000.0)});
+          viewer.dataSources.add(
+          Cesium.KmlDataSource.load("./data/minamialps_agri.kml")options);
+          },
+        },
+      ],
+      "toolbar"
+      );
     </script>
   </body>
 </html>
